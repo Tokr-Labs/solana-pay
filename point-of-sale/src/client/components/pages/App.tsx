@@ -1,19 +1,18 @@
-import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
-import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
-import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
-import { GlowWalletAdapter, PhantomWalletAdapter, SolflareWalletAdapter } from '@solana/wallet-adapter-wallets';
-import { PublicKey } from '@solana/web3.js';
-import { AppContext, AppProps as NextAppProps, default as NextApp } from 'next/app';
-import { AppInitialProps } from 'next/dist/shared/lib/utils';
-import { FC, useMemo } from 'react';
+import {WalletAdapterNetwork} from '@solana/wallet-adapter-base';
+import {ConnectionProvider, WalletProvider} from '@solana/wallet-adapter-react';
+import {WalletModalProvider} from '@solana/wallet-adapter-react-ui';
+import {GlowWalletAdapter, PhantomWalletAdapter, SolflareWalletAdapter} from '@solana/wallet-adapter-wallets';
+import {PublicKey} from '@solana/web3.js';
+import {AppContext, AppProps as NextAppProps, default as NextApp} from 'next/app';
+import {AppInitialProps} from 'next/dist/shared/lib/utils';
+import {FC, useMemo} from 'react';
 import {DEVNET_ABV_MINT, DEVNET_ENDPOINT} from '../../utils/constants';
-import { ConfigProvider } from '../contexts/ConfigProvider';
-import { FullscreenProvider } from '../contexts/FullscreenProvider';
-import { PaymentProvider } from '../contexts/PaymentProvider';
-import { ThemeProvider } from '../contexts/ThemeProvider';
-import { TransactionsProvider } from '../contexts/TransactionsProvider';
-import { SolanaPayLogo } from '../images/SolanaPayLogo';
-import { SOLIcon } from '../images/SOLIcon';
+import {ConfigProvider} from '../contexts/ConfigProvider';
+import {FullscreenProvider} from '../contexts/FullscreenProvider';
+import {PaymentProvider} from '../contexts/PaymentProvider';
+import {ThemeProvider} from '../contexts/ThemeProvider';
+import {TransactionsProvider} from '../contexts/TransactionsProvider';
+import {SolanaPayLogo} from '../images/SolanaPayLogo';
 import css from './App.module.css';
 import {ABVIcon} from "../images/ABVIcon";
 
@@ -79,7 +78,7 @@ const App: FC<AppProps> & { getInitialProps(appContext: AppContext): Promise<App
                                     splToken={DEVNET_ABV_MINT}
                                     symbol="ABV"
                                     icon={<ABVIcon />}
-                                    decimals={0}
+                                    decimals={6}
                                     minDecimals={0}
                                     connectWallet={connectWallet}
                                 >

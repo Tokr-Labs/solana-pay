@@ -19,15 +19,15 @@ export const Progress: FC = () => {
         }
     }, [status, progress]);
 
-    const interpolated = useMemo(() => interpolate(['#8752f3', '#5497d5', '#43b4ca', '#28e0b9', '#19fb9b']), []);
+    // const interpolated = useMemo(() => interpolate(['#8752f3', '#5497d5', '#43b4ca', '#28e0b9', '#90fc4d']), []);
     const styles = useMemo(
         () =>
             buildStyles({
                 pathTransitionDuration: 0.5,
-                pathColor: interpolated(value),
+                pathColor: "#90fc4d", // interpolated(value),
                 trailColor: 'rgba(0,0,0,.1)',
             }),
-        [interpolated, value]
+        [value]
     );
 
     return (

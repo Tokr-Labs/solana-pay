@@ -6,7 +6,7 @@ export interface ThemeProviderProps {
 }
 
 export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
-    const query = '(prefers-color-scheme: light)';
+    const query = '(prefers-color-scheme: dark)';
     const [theme, setTheme] = useState<Theme>(() =>
         typeof window !== 'undefined' && window.matchMedia && window.matchMedia(query).matches ? 'light' : 'dark'
     );
